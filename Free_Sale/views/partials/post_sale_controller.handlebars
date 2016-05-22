@@ -1,12 +1,27 @@
 <script>
 
          var app=angular.module('post_sale',[]);
-          app.controller('firstController',function($scope)
+          app.controller('firstController',['$scope','$http', function($scope,$http)
 			 {
                 $scope.display_corosal=false;
 			    $scope.numbers=[1,2,3,4,5,6,7,8,9];
+                $scope.formData = {'name':'theri babe'};
+                
+                 $scope.createTodo = function() {
+		               $http.post('/api/todos', $scope.formData)
+			                      .success(function(data) {
+				                            $scope.formData = {}; // clear the form so our user is ready to enter another
+				                            $scope.todos = data;
+				                            console.log(data);
+			                                               })
+			                                .error(function(data) {
+				                            console.log('Error: ' + data);
+			                                              });
+	                                              };
+                 
                 $scope.add_image_grid = function(value) {
-                  alert(value);};
+                  alert("value");
+                };
                 $scope.show_below_grid = function(msg) {
                 var promise = '';
                   
@@ -89,7 +104,7 @@ strVar1 += "      <li data-target=\"#myCarousel\" data-slide-to=\"1\"><\/li>";
                     }  
 	           };
                 
-			 });
+			 }]);
               
      
 </script>
