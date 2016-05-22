@@ -12,7 +12,7 @@ module.exports = function(app) {
 			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
 				res.send(err)
-
+            
 			res.json(todos); // return all todos in JSON format
 		});
 	});
@@ -23,6 +23,7 @@ module.exports = function(app) {
 		// create a todo, information comes from AJAX request from Angular
 		Todo.create({
 			text : req.body.text,
+            text1: req.body.text1,
 			done : false
 		}, function(err, todo) {
 			if (err)
@@ -32,6 +33,7 @@ module.exports = function(app) {
 			Todo.find(function(err, todos) {
 				if (err)
 					res.send(err)
+                console.log(todos);
 				res.json(todos);
 			});
 		});
