@@ -1,0 +1,95 @@
+<script>
+
+         var app=angular.module('post_sale',[]);
+          app.controller('firstController',function($scope)
+			 {
+                $scope.display_corosal=false;
+			    $scope.numbers=[1,2,3,4,5,6,7,8,9];
+                $scope.add_image_grid = function(value) {
+                  alert(value);};
+                $scope.show_below_grid = function(msg) {
+                var promise = '';
+                  
+                  if($scope.selectedName>=1)
+                      {
+                        if($scope.selectedName<=9)
+                            {
+                               
+                                if(!$scope.sale_loc.isNullOrEmptyOrUndefined)
+                                    {
+                                       if(!$scope.sale_date.isNullOrEmptyOrUndefined)
+                                           {
+                                                  $('#num_items').prop("disabled", true);
+                                                  $('#sale_loc').prop("disabled", true);   
+                                                  $('#sale_date').prop("disabled", true);
+                                                  $('#go_sale').hide();
+                                                  $scope.display_corosal=true;
+                                           } 
+                                    }
+                               
+                            }
+                      }
+                
+                  for(i=0;i<$scope.selectedName;i++)
+                    {
+                        if(i==0)
+                            {
+                               var strVar="";
+                                strVar += "<div class='item active'><form action='' method='post' enctype='multipart\/form-data'>";
+strVar += "<center><section id='create' style='margin-top:95px;position:relative;color:black;width:80%;'>	";
+strVar += "<table class='table table-bordered' id='table'"+i+"><tr><td colspan='2' style='text-align:center'><h3>Item -"+(i+1)+" Details<\/h3><\/td><\/tr>";
+strVar += "<tr><td>Item Name:<\/td><td><input type='text' placeholder='Item name' class='form-control' name='title' id='eventname' \/><\/td>";
+strVar += "<\/tr><tr><td>Description:<\/td><td><textarea placeholder='Description' class='form-control' id='descr' ><\/textarea><\/td><\/tr>";
+strVar += "<tr><td>Item Category:<\/td><td><input type='text' placeholder='Item Category'  id='category' class='form-control' name='category'\/><\/td>";
+strVar += "<\/tr><tr><td>Image:<\/td>";
+strVar += "                 <td>";
+strVar += "                 <span class='btn btn-default btn-file'>";
+strVar += "                  <input type='file'>";
+strVar += "                 <\/span>";
+strVar += "<a class='btn btn-default btn-lg padding_down' ng-click='add_image_grid("+i+")'><span class='glyphicon'>";
+strVar += "  </span>a<\/a><\/td>";
+strVar += "            <\/tr>";
+strVar += "        <\/table>";
+strVar += "    <\/section>";
+strVar += "    <\/center>";
+strVar += "    <\/form>";
+strVar += "      <\/div>";
+                               $('#item_details').append(strVar);
+                                 var strVar1="";
+strVar1 += "<li data-target=\"#myCarousel\" data-slide-to=\""+i+"\" class=\"active\"><\/li>";
+                            $('#coro_indi').append(strVar1);
+                            }
+                        else
+                        {
+                            var strVar="";
+                                strVar += "<div class='item'><form action='' method='post' enctype='multipart\/form-data'>";
+strVar += "<center><section id='create' style='margin-top:95px;position:relative;color:black;width:80%;'>	";
+strVar += "<table class='table table-bordered' id='table'"+i+"><tr><td colspan='2' style='text-align:center'><h3>Item - "+(i+1)+"  Details<\/h3><\/td><\/tr>";
+strVar += "<tr><td>Item Name:<\/td><td><input type='text' placeholder='Item name' class='form-control' name='title' id='eventname' \/><\/td>";
+strVar += "<\/tr><tr><td>Description:<\/td><td><textarea placeholder='Description' class='form-control' id='descr' ><\/textarea><\/td><\/tr>";
+strVar += "<tr><td>Item Category:<\/td><td><input type='text' placeholder='Item Category'  id='category' class='form-control' name='category'\/><\/td>";
+strVar += "<\/tr><tr><td>Image:<\/td>";
+strVar += "                 <td>";
+strVar += "                 <span class='btn btn-default btn-file'>";
+strVar += "                  <input type='file'>";
+strVar += "                 <\/span>";
+strVar += "<a class='btn btn-default btn-lg padding_down' ng-click='add_image_grid("+i+")'><span class='glyphicon'>";
+strVar += "  </span>a<\/a><\/td>";
+strVar += "            <\/tr>";
+strVar += "        <\/table>";
+strVar += "    <\/section>";
+strVar += "    <\/center>";
+strVar += "    <\/form>";
+strVar += "      <\/div>";
+                               $('#item_details').append(strVar);
+                             var strVar1="";
+strVar1 += "      <li data-target=\"#myCarousel\" data-slide-to=\"1\"><\/li>";
+                            $('#coro_indi').append(strVar1);
+                        }
+                    }  
+	           };
+                
+			 });
+              
+     
+</script>

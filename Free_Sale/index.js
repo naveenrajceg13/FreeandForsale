@@ -24,7 +24,6 @@ app.get('/contact',function(req,res){
 app.get('/Post_Sale',function(req,res){
     res.render('Post_Sale');
 });
-
 app.listen(app.get('port'),function(){
    console.log('listening in port'); 
 }); 
