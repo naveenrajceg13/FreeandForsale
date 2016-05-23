@@ -23,7 +23,7 @@ strVar += "    <\/center>";
 strVar += "    <\/form>";
 strVar += "      <\/div>";
     
-    return strVar;
+    return null;
     
 };
 function table_row_0()
@@ -49,7 +49,7 @@ strVar += "    <\/center>";
 strVar += "    <\/form>";
 strVar += "      <\/div>";     
     
-    return strVar;
+    return null;
 }
 
 function disable_post_header()
@@ -101,6 +101,21 @@ function validate_header($scope)
                                
                             }
                       }
+}
+function show_hide_price(msg)
+{
+                   if(msg==false)
+                    {
+                        $('#price_item').hide();
+                    }
+                   else
+                    {
+                        $('#price_item').show();
+                    }
+}
+function hide_all_price()
+{
+    $('#price_item').hide();
 }
     
     </script>

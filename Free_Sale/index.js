@@ -1,6 +1,5 @@
 var express=require('express');
 var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
 var database = require('./config/database'); 			// load the database config
 var morgan = require('morgan'); 		// log requests to the console (express4)
 var bodyParser = require('body-parser'); 	// pull information from HTML POST (express4)
