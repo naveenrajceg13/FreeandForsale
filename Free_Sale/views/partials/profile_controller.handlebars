@@ -1,0 +1,16 @@
+<script>
+ var app=angular.module('profile',[]);
+          app.controller('profilecontroller',function($scope)
+			 {
+              $scope.toggle = false;
+              $scope.toggle1 = true;
+              $scope.toggle_bar = function() {
+                  $scope.toggle = false;
+                  $scope.toggle1 = true; 
+          };
+               $scope.toggle_bar1 = function() {
+                 $scope.toggle = true;
+                 $scope.toggle1 = false; 
+          };
+          });
+</script>

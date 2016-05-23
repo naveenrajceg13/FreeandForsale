@@ -1,0 +1,29 @@
+<script>
+
+         var app=angular.module('post_sale',[]);
+          app.controller('firstController',['$scope','$http', function($scope,$http)
+			 {  
+                $scope.formData = {}; 
+                $scope.display_corosal=false;
+			    $scope.numbers=[1,2,3,4,5,6,7,8,9];
+                $scope.category=['Cars and bikes','Mobiles and Tablets','Electonics and Appliances',
+                                'Home and Life Style','Entertainment','Pets and Pet Care','Education and Learning','Services'];
+                dbscripts_post_sale($scope,$http);  
+                $scope.add_image_grid = function(value) {        
+                     
+                };
+                $scope.show_below_grid = function(msg) {
+                     
+                     validate_header($scope);
+                     create_line_details($scope);
+                     hide_all_price();
+	           };
+               $scope.show_hide_price=function(msg)
+               {
+                   show_hide_price(msg);
+               }
+                
+			 }]);
+              
+     
+</script>
