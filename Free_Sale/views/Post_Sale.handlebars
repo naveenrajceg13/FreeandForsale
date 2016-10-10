@@ -33,86 +33,11 @@
     <ol class="carousel-indicators" id="coro_indi">
     </ol>
     <!-- Wrapper for slides -->
+    <select class="form-control ng-pristine ng-valid ng-touched">
+        <options ng-repeat="item in category" ng-bind="item" ng-model="item.category"><p ng-bind="item"></p></options>
+        </select>
     <div class="carousel-inner" role="listbox" id="item_details">
-        <div class='item active'><form action='' method='post' enctype='multipart/form-data'>
-             <center>
-                <section id='create' style='margin-top:23px;position:relative;color:black;width:80%;'>	
-                   <table class='table table-bordered'>
-                      <tr>
-                             <td colspan='2' style='text-align:center'>
-                       <h3>Item -1 </h3></td></tr>
-                       <tr>
-                       <td>Item Category:</td>
-                        <td><select class="form-control" ng-options="item for item in category" id="num_items" ng-model='item.category'></select>
-                           </td>
-                       </tr>
-                      <tr>
-                       <td>Item Name:</td>
-                          <td><input type='text' placeholder='Item name' class='form-control' name='title' id='eventname' ng-model='item.name'/></td>
-                      </tr>
-                      <tr>
-                      <td>Item Description:</td>
-                          <td><textarea placeholder='Description' class='form-control' id='descr' ng-model='item.descr'></textarea></td>
-                      </tr>
-                       
-                      <tr>
-                          <td>Photos:</td>
-                      <td>
-                              
-                              <span class=''>
-                              <input type='file' multiple placeholder='Multiple Selection allowed' accept="image/*" id='item_photos' ng-model='item.photos'>
-                              </span>
-                      </td>
-                      </tr>
-                       <td> 
-                           Item Condition:
-                       </td>
-                       <td>
-                           <form role="form">
-                                 <label class="radio-inline">
-                                 <input type="radio" name="condition" ng-model='item.condition' value="used" checked>Used
-                                 </label>
-                                 <label class="radio-inline">
-                                 <input type="radio" name="condition" ng-model='item.condition' value="new" >New
-                                 </label>
-                           </form>
-                       </td>
-                       <tr>
-                             <td>
-                                  Price 
-                             </td>
-                             <td>
-                                 <form role="form">
-                                 <label class="radio-inline">
-                                 <input type="radio" name="price_free" ng-model='item.price_free' value=false ng-click="show_hide_price(false)" checked>Free
-                                 </label>
-                                 <label class="radio-inline">
-                                 <input type="radio" name="price_free" ng-model='item.price_free' value=true ng-click="show_hide_price(true)">Sale
-                                 </label>
-                                 </form>
-                             </td> 
-                       </tr>
-                       <tr id="price_item">
-                           <td>
-                           </td>
-                               <td>
-                                      <input type="text" placeholder="enter price" ng-model='item.price'/>
-                                  </td>
-                       </tr>
-                       <tr>
-                           <td>
-                               Quantity:
-                           </td>
-                           <td>
-                               <input type="number" min="0" ng-model='item.qty'/>
-                           </td>
-                       </tr>
-                              
-        </table>
-    </section>
-    </center>
-    </form>
-      </div>
+      
     </div>
     <div colspan="3" style="text-align:center">
      <input type="button" id="register" value="Post Sale" class="btn btn-primary" style="background-color:#1B7B98" ng-click='add_image_grid()'/>

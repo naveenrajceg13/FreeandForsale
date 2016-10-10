@@ -28,28 +28,9 @@ strVar += "      <\/div>";
 };
 function table_row_0()
 {
-   var strVar="";
-                                strVar += "<div class='item active'><form action='' method='post' enctype='multipart\/form-data'>";
-strVar += "<center><section id='create' style='margin-top:95px;position:relative;color:black;width:80%;'>	";
-strVar += "<table class='table table-bordered' id='table'"+i+"><tr><td colspan='2' style='text-align:center'><h3>Item -"+(i+1)+" Details<\/h3><\/td><\/tr>";
-strVar += "<tr><td>Item Name:<\/td><td><input type='text' placeholder='Item name' class='form-control' name='title' id='eventname' \/><\/td>";
-strVar += "<\/tr><tr><td>Description:<\/td><td><textarea placeholder='Description' class='form-control' id='descr' ><\/textarea><\/td><\/tr>";
-strVar += "<tr><td>Item Category:<\/td><td><input type='text' placeholder='Item Category'  id='category' class='form-control' name='category'\/><\/td>";
-strVar += "<\/tr><tr><td>Image:<\/td>";
-strVar += "                 <td>";
-strVar += "                 <span class='btn btn-default btn-file'>";
-strVar += "                  <input type='file'>";
-strVar += "                 <\/span>";
-strVar += "<a class='btn btn-default btn-lg padding_down' ng-click='add_image_grid("+i+")'><span class='glyphicon'>";
-strVar += "  </span>a<\/a><\/td>";
-strVar += "            <\/tr>";
-strVar += "        <\/table>";
-strVar += "    <\/section>";
-strVar += "    <\/center>";
-strVar += "    <\/form>";
-strVar += "      <\/div>";     
-    
-    return null;
+   var strVar="<select class='form-control ng-pristine ng-valid ng-touched' ng-options='item for item in category'";
+    strVar+=" ng-model='item.category'></select>";
+   return null;
 }
 
 function disable_post_header()
