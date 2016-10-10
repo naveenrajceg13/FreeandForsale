@@ -73,4 +73,7 @@ app.get('/contact',function(req,res){
 app.get('/Post_Sale',function(req,res){
     res.render('Post_Sale');
 });
+    app.get('/profile',function(req,res){
+    res.render('profile');
+});
 };
